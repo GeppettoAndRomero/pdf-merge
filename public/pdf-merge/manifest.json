@@ -1,0 +1,36 @@
+{
+  "name": "Merge PDF \u2014 runlocally",
+  "short_name": "Merge PDF",
+  "description": "Combine several PDFs into one, in your browser. Nothing is uploaded. Works offline.",
+  "start_url": "/pdf-merge/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone"
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "scope": "/pdf-merge/",
+  "icons": [
+    {
+      "src": "/pdf-merge/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/pdf-merge/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "utilities",
+    "productivity"
+  ],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  }
+}
