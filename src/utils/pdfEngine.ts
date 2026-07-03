@@ -4,6 +4,7 @@
  * in any normal PDF reader.
  */
 import { PDFDocument } from 'pdf-lib';
+import { AppError } from './appError';
 
 async function loadPdf(file: File): Promise<PDFDocument> {
   const bytes = new Uint8Array(await file.arrayBuffer());
@@ -11,8 +12,8 @@ async function loadPdf(file: File): Promise<PDFDocument> {
     return await PDFDocument.load(bytes);
   } catch (e) {
     const msg = e instanceof Error ? e.message : '';
-    if (/encrypt/i.test(msg)) throw new Error(`"${file.name}" is password-protected (encrypted).`);
-    throw new Error(`"${file.name}" is not a readable PDF.`);
+    if (/encrypt/i.test(msg)) throw new AppError('errPdfEncrypted', { name: file.name });
+    throw new AppError('errPdfUnreadable', { name: file.name });
   }
 }
 
@@ -22,7 +23,7 @@ export async function mergePdfs(
   files: File[],
   onProgress?: (p: MergeProgress) => void
 ): Promise<Blob> {
-  if (files.length < 2) throw new Error('Add at least two PDFs to merge.');
+  if (files.length < 2) throw new AppError('errNeedTwoPdfs');
   const out = await PDFDocument.create();
   for (let i = 0; i < files.length; i++) {
     onProgress?.({ index: i, total: files.length, name: files[i].name });
