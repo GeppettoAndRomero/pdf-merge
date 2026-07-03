@@ -9,6 +9,7 @@ import { AppCard } from './AppCard';
 import { AppButton } from './AppButton';
 import { ErrorToast } from './ErrorToast';
 import { mergePdfs } from '@/utils/pdfEngine';
+import { resolveErrorMessage } from '@/utils/appError';
 import { ui } from '@/i18n/ui';
 
 interface ErrorToastItem {
@@ -83,11 +84,11 @@ export function ConversionManager({ locale = 'en' }: ConversionManagerProps) {
       a.remove();
       URL.revokeObjectURL(url);
     } catch (error) {
-      showErrorToast(error instanceof Error ? error.message : 'Failed');
+      showErrorToast(resolveErrorMessage(error, t));
     } finally {
       setBusy(false);
     }
-  }, [busy, showErrorToast]);
+  }, [busy, showErrorToast, t]);
 
   return (
     <div>

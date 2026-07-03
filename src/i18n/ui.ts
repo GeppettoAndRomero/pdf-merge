@@ -36,6 +36,9 @@ export const ui = {
     errUnsupported:
       'Not a PDF file ({name}).',
     errConversionFailed: 'Conversion failed',
+    errNeedTwoPdfs: 'Add at least two PDFs to merge.',
+    errPdfEncrypted: '"{name}" is password-protected (encrypted).',
+    errPdfUnreadable: '"{name}" is not a readable PDF.',
     errDownloadFailed: 'Download failed',
 
     // SettingsPanel
@@ -110,6 +113,9 @@ export const ui = {
     errUnsupported:
       'PDF ファイルではありません（{name}）。',
     errConversionFailed: '変換に失敗しました',
+    errNeedTwoPdfs: '結合するには PDF を 2 つ以上追加してください。',
+    errPdfEncrypted: '「{name}」はパスワードで保護されています（暗号化）。',
+    errPdfUnreadable: '「{name}」は読み取り可能な PDF ではありません。',
     errDownloadFailed: 'ダウンロードに失敗しました',
 
     // SettingsPanel
@@ -182,6 +188,9 @@ export const ui = {
     conversionSettings: '转换设置',
     errUnsupported: '不是 PDF 文件（{name}）。',
     errConversionFailed: '转换失败',
+    errNeedTwoPdfs: '请至少添加两个 PDF 才能合并。',
+    errPdfEncrypted: '“{name}” 受密码保护（已加密）。',
+    errPdfUnreadable: '“{name}” 不是可读取的 PDF。',
     errDownloadFailed: '下载失败',
 
     // SettingsPanel
@@ -256,6 +265,9 @@ export const ui = {
     errUnsupported:
       'Keine PDF-Datei ({name}).',
     errConversionFailed: 'Umwandlung fehlgeschlagen',
+    errNeedTwoPdfs: 'Füge mindestens zwei PDFs zum Zusammenführen hinzu.',
+    errPdfEncrypted: '„{name}" ist passwortgeschützt (verschlüsselt).',
+    errPdfUnreadable: '„{name}" ist kein lesbares PDF.',
     errDownloadFailed: 'Download fehlgeschlagen',
 
     // SettingsPanel
@@ -328,6 +340,9 @@ export const ui = {
     conversionSettings: 'Ajustes de conversión',
     errUnsupported: 'No es un archivo PDF ({name}).',
     errConversionFailed: 'La conversión falló',
+    errNeedTwoPdfs: 'Añade al menos dos PDF para unirlos.',
+    errPdfEncrypted: '«{name}» está protegido con contraseña (cifrado).',
+    errPdfUnreadable: '«{name}» no es un PDF legible.',
     errDownloadFailed: 'La descarga falló',
 
     // SettingsPanel
