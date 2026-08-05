@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { waitReady, dropSamples } from './_helpers';
 
 // axe inspects the rendered DOM; one engine is representative.
 test.describe('accessibility', () => {
@@ -22,4 +23,20 @@ test.describe('accessibility', () => {
       expect(blocking.map((v) => `${v.id} (${v.impact})`)).toEqual([]);
     });
   }
+
+  test('has no serious or critical axe violations with per-file thumbnails rendered', async ({
+    page,
+  }) => {
+    // The reorderable file list with thumbnails (#144) only exists once files are
+    // dropped — the two checks above never see it. Axe here on the "reorder before
+    // merging" state.
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('/pdf-merge/');
+    await waitReady(page);
+    await dropSamples(page);
+    await expect(page.locator('#merge-action')).toBeVisible();
+    const { violations } = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
+    const blocking = violations.filter((v) => v.impact === 'serious' || v.impact === 'critical');
+    expect(blocking.map((v) => `${v.id} (${v.impact})`)).toEqual([]);
+  });
 });
