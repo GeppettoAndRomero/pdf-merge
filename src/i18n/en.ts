@@ -6,12 +6,12 @@ export const en: ToolContent = {
   htmlLang: 'en',
 
   meta: {
-    title: 'Merge PDF — Combine PDFs in Your Browser, No Upload | runlocally',
+    title: 'Merge PDF — Offline, No Sign Up, No Upload | runlocally',
     description:
-      'Merge several PDF files into one, in the order you choose, directly in your browser. Files are processed on your device and never uploaded. Open source, works offline.',
-    ogTitle: 'Merge PDF — Combine PDFs in Your Browser, No Upload',
+      'Merge several PDF files into one, in the order you choose, without uploading them anywhere and without signing up. Everything runs directly in your browser and works fully offline. Open source.',
+    ogTitle: 'Merge PDF — Offline, No Sign Up, No Upload',
     ogDescription:
-      'Combine multiple PDF files into one in your browser. Set the order, then download. Nothing is uploaded. Open source, works offline.',
+      'Combine multiple PDF files into one in your browser, without uploading or signing up. Set the order, then download. Works offline. Open source.',
   },
 
   hero: {
@@ -61,6 +61,10 @@ export const en: ToolContent = {
 
   faqHeading: 'FAQ',
   faq: [
+    {
+      q: 'Do I need to sign up or install anything?',
+      a: 'No. There is no account, no sign up, and nothing to install — open the page and merge PDFs directly in your browser. It also works fully offline once the page has loaded, and no file is ever uploaded.',
+    },
     {
       q: 'Are my files uploaded anywhere?',
       a: 'No. The merge runs entirely in your browser. There is no server component, so your files have no path off your device. The source is open and you can confirm this in your browser\'s Network panel.',
